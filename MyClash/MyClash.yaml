@@ -1,0 +1,356 @@
+# Clash配置 -由Kabutack制作以自用，2022年7月24日 15:39:54
+
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+cfw-latency-url: http://www.gstatic.com/generate_204
+allow-lan: false
+
+bind-address: '*'
+
+mode: rule
+
+log-level: info
+
+ipv6: false
+
+external-controller: 127.0.0.1:9090
+
+hosts:
+  'mtalk.google.com': 108.177.125.188
+  'dl.google.com': 180.163.151.161
+  'dl.l.google.com': 180.163.151.161
+
+dns:
+  enable: false
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - localhost.ptlogin2.qq.com
+    - '+.srv.nintendo.net'
+    - '+.stun.playstation.net'
+    - '+.msftconnecttest.com'
+    - '+.msftncsi.com'
+    - '+.xboxlive.com'
+    - 'msftconnecttest.com'
+    - 'xbox.*.microsoft.com'
+    - '*.battlenet.com.cn'
+    - '*.battlenet.com'
+    - '*.blzstatic.cn'
+    - '*.battle.net'
+  
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+
+proxies:
+
+proxy-providers:
+
+  HK:
+    type: http
+    url: "https://dove.589669.xyz/all2clash?&sub=■■■■■■&filter=(%3F%3D.*(%E6%B8%AF%7CHK%7C(%3Fi)Hong))&emoji=-1&sort=0"
+    interval: 3600
+    path: ./Proxy/HKList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  TW:
+    type: http
+    url: "https://dove.589669.xyz/all2clash?&sub=■■■■■■&filter=(%3F%3D.*(%E5%8F%B0%7CTW%7C(%3Fi)Taiwan))&emoji=-1&sort=0"
+    interval: 3600
+    path: ./Proxy/TWList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  SG:
+    type: http
+    url: "https://dove.589669.xyz/all2clash?&sub=■■■■■■&filter=(%3F%3D.*(%E6%96%B0%7C%E7%8B%AE%7C%E7%8D%85%7CSG%7C(%3Fi)Singapore))&emoji=-1&sort=0"
+    interval: 3600
+    path: ./Proxy/SGList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  JP:
+    type: http
+    url: "https://dove.589669.xyz/all2clash?&sub=■■■■■■&filter=(%3F%3D.*(%E6%97%A5%7CJP%7C(%3Fi)Japan))&emoji=-1&sort=0"
+    interval: 3600
+    path: ./Proxy/JPList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  US:
+    type: http
+    url: "https://dove.589669.xyz/all2clash?&sub=■■■■■■&filter=(%3F%3D.*(%E7%BE%8E%7CUS%7C(%3Fi)States%7CAmerican))&emoji=-1&sort=0"
+    interval: 3600
+    path: ./Proxy/USList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  EU:
+    type: http
+    url: "https://dove.589669.xyz/all2clash?&sub=■■■■■■&filter=(%3F%3D.*(%E7%BE%8E%7CUS%7C(%3Fi)States%7CAmerican))&emoji=-1&sort=0"
+    interval: 3600
+    path: ./Proxy/USList.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - 🏚 国内直连
+      - 🏐 香港节点
+      - 🥎 日本节点
+      - 🏈 美国节点
+      - ⚽ 狮城节点
+      - 🏈 台湾节点
+      - 🎱 欧洲节点
+  - name: 🍻 全球抖音
+    type: select
+    proxies:
+      - 🏚 国内直连
+      - 🚀 节点选择
+      - 🏐 香港节点
+      - 🥎 日本节点
+      - 🏈 美国节点
+      - ⚽ 狮城节点
+      - 🏈 台湾节点
+      - 🎱 欧洲节点
+  - name: 🎸 声田音乐
+    type: select
+    proxies:
+      - 🏚 国内直连
+      - 🚀 节点选择
+      - 🏐 香港节点
+      - 🥎 日本节点
+      - 🏈 美国节点
+      - ⚽ 狮城节点
+      - 🏈 台湾节点
+      - 🎱 欧洲节点
+  - name: 📺 小小奈飞
+    type: select
+    proxies:
+      - 🏚 国内直连
+      - 🚀 节点选择
+      - 🏐 香港节点
+      - 🥎 日本节点
+      - 🏈 美国节点
+      - ⚽ 狮城节点
+      - 🏈 台湾节点
+      - 🎱 欧洲节点
+  - name: 📺 小迪士尼
+    type: select
+    proxies:
+      - 🏚 国内直连
+      - 🚀 节点选择
+      - 🏐 香港节点
+      - 🥎 日本节点
+      - 🏈 美国节点
+      - ⚽ 狮城节点
+      - 🏈 台湾节点
+      - 🎱 欧洲节点
+  - name: 👑 微软服务
+    type: select
+    proxies:
+      - 🏚 国内直连
+      - 🚀 节点选择
+      - 🏐 香港节点
+      - 🥎 日本节点
+      - 🏈 美国节点
+      - ⚽ 狮城节点
+      - 🏈 台湾节点
+      - 🎱 欧洲节点
+  - name: ✈ 全球加速
+    type: select
+    proxies:
+      - 🏚 国内直连
+      - 🚀 节点选择
+      - 🏐 香港节点
+      - 🥎 日本节点
+      - 🏈 美国节点
+      - ⚽ 狮城节点
+      - 🏈 台湾节点
+      - 🎱 欧洲节点
+  - name: 🏚 国内直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+  - name: ⚡ 网络测速
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+  - name: 👥 黑白名单
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - DIRECT
+  - name: 🏐 香港节点
+    type: select
+    use:
+      - HK
+  - name: 🥎 日本节点
+    type: select
+    use:
+      - JP
+  - name: 🏈 美国节点
+    type: select
+    use:
+      - US
+  - name: ⚽ 狮城节点
+    type: select
+    use:
+      - SG
+  - name: 🏈 台湾节点
+    type: select
+    use:
+      - TW
+  - name: 🎱 欧洲节点
+    type: select
+    use:
+      - EU
+       
+
+rule-providers:
+  Spotify:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/Spotify/Spotify.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Spotify/Spotify.yaml
+    interval: 604800
+    
+  Apple:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/Apple/Apple.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple.yaml
+    interval: 604800
+    
+  Github:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/GitHub/GitHub.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml
+    interval: 604800
+    
+  Google:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/Google/Google.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml
+    interval: 604800
+    
+  YouTube:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/YouTube/YouTube.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml
+    interval: 604800
+  YouTubeMusic:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/YouTubeMusic/YouTubeMusic.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml
+    interval: 604800    
+    
+  Microsoft:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/Microsoft/Microsoft.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml
+    interval: 604800
+    
+  TikTOK:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/TikTok/TikTok.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TikTok/TikTok.yaml
+    interval: 604800 
+
+  Telegram:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/Telegram/Telegram.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml
+    interval: 604800
+
+  Netflix:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/Netflix/Netflix.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix.yaml
+    interval: 604800
+
+  Disney:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/Disney/Disney.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Disney/Disney.yaml
+    interval: 604800
+
+  Global:
+    type: http
+    behavior: classical
+    path: ./rule/Clash/Global/Global_Classical.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global_Classical.yaml
+    interval: 604800
+
+  China:
+    type: http
+    behavior: classical
+    path: ./ChinaMax/ChinaMax_Classical.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
+    interval: 604800
+
+rules:
+  - DOMAIN,p14-buy.itunes.apple.com,🏚 国内直连
+  - RULE-SET,Microsoft,👑 微软服务
+  - RULE-SET,Spotify,🎸 声田音乐
+  - RULE-SET,Google,✈ 全球加速
+  - RULE-SET,Github,✈ 全球加速
+  - RULE-SET,YouTube,✈ 全球加速
+  - RULE-SET,YouTubeMusic,✈ 全球加速
+  - RULE-SET,TikTOK,🍻 全球抖音 
+  - RULE-SET,Telegram,✈ 全球加速
+  - RULE-SET,Global,✈ 全球加速
+  - RULE-SET,Disney,📺 小迪士尼
+  - RULE-SET,Netflix,📺 小小奈飞
+  - RULE-SET,Apple,🏚 国内直连
+  - RULE-SET,China,🏚 国内直连
+  - DOMAIN-SUFFIX,moon.fm,✈ 全球加速
+  - DOMAIN-SUFFIX,1password.com,DIRECT
+  - DOMAIN-SUFFIX,fast.com,⚡ 网络测速
+  - DOMAIN-SUFFIX,ooklaserver.net,⚡ 网络测速
+  - DOMAIN-SUFFIX,speed.cloudflare.com,⚡ 网络测速
+  - DOMAIN-SUFFIX,speed.dler.io,⚡ 网络测速
+  - DOMAIN-KEYWORD,speedtest,⚡ 网络测速
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,224.0.0.0/4,DIRECT
+  - IP-CIDR,fe80::/10,DIRECT
+  - IP-CIDR,119.28.28.28/32,DIRECT
+  - IP-CIDR,182.254.116.0/24,DIRECT
+  - GEOIP,CN,DIRECT
+
+  - MATCH,👥 黑白名单
