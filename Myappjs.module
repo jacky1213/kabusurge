@@ -22,6 +22,15 @@ skip-proxy = %APPEND% iosapps.itunes.apple.com
 URL-REGEX, ^https://static\.zhihu\.com/[^/]+/(main|column)\.signflow\.[^.]+.js, REJECT
 
 [Script]
+# > 百度搜索防跳转
+百度防跳转 = type=http-response,pattern=^https:\/\/boxer\.baidu\.com\/scheme\?scheme,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
+
+# > NASA推送的每日一图
+NASA每日一图 = type=cron,cronexp=0 7 * * *,script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/nasa/nasapic.js
+
+# > iDaily每日推送
+iDaily每日环球视野 = type=cron,cronexp=0 8 * * *,script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/idaily/idaily.js
+
 # > yichahucha的Netflix评分
 nf_rating.js = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
 nf_rating.js = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
@@ -52,4 +61,4 @@ WPS稻壳会员1 = type=http-request,pattern=^https?:\/\/account\.wps\.cn\/api\/
 WPS稻壳会员 = type=http-request,pattern=^https?:\/\/.+\.(docer.)?wps.cn\/(user\/v1\/vip|android\/mb\/buy|download\/v1\/ios|partner\/invoke\/usable|(api|rank)\/v1(\/mobile\/mb)?\/detail),requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/WPSDocerVIPowerCrack.js,script-update-interval=0,max-size=0
 
 [MITM]
-hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com,  testflight.apple.com, biz.caiyunapp.com, spclient.wg.spotify.com ,*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, security.wechat.com, weixin110.qq.com, api.m.jd.com, static.zhihu.com, account.wps.cn,
+hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com,  testflight.apple.com, biz.caiyunapp.com, spclient.wg.spotify.com ,*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, security.wechat.com, weixin110.qq.com, api.m.jd.com, static.zhihu.com, account.wps.cn, boxer.baidu.com
