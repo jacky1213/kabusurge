@@ -56,9 +56,5 @@ TK去水印 = type=http-response,pattern=https?:\/\/.*\.tiktokv\.com\/aweme\/v\d
 # > 京东App 历史价格 
 京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jd_price.js
 
-# > WPS稻壳会员
-WPS稻壳会员1 = type=http-request,pattern=^https?:\/\/account\.wps\.cn\/api\/v3\/mine\/vips,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/WPSDocerVIPuserCrack.js,script-update-interval=0,max-size=0
-WPS稻壳会员 = type=http-request,pattern=^https?:\/\/.+\.(docer.)?wps.cn\/(user\/v1\/vip|android\/mb\/buy|download\/v1\/ios|partner\/invoke\/usable|(api|rank)\/v1(\/mobile\/mb)?\/detail),requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/WPSDocerVIPowerCrack.js,script-update-interval=0,max-size=0
-
 [MITM]
-hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com,  testflight.apple.com, biz.caiyunapp.com, spclient.wg.spotify.com ,*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, security.wechat.com, weixin110.qq.com, api.m.jd.com, static.zhihu.com, boxer.baidu.com, *.docer.wps.cn, vipapi.wps.cn, account.wps.cn
+hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com,  testflight.apple.com, biz.caiyunapp.com, spclient.wg.spotify.com ,*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, security.wechat.com, weixin110.qq.com, api.m.jd.com, static.zhihu.com, boxer.baidu.com
