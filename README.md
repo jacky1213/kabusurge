@@ -1,2 +1,3 @@
 # MySurge
-自己surge使用的一些设置
+Surge与Clash自用配置
+
