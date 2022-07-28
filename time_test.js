@@ -1,13 +1,5 @@
-/*
- * 由@smartmimi编写、由@Rabbit-Spec修改
- * 原脚本地址：https://raw.githubusercontent.com/smartmimi/conf/master/surge/timecard.js
- * 由@jacky1213修改以自用
- * 更新日期：2022.07.13
- * 版本：1.1
-*/
-
 var tlist = {
-  1: ["开学", "2022-09-01"],
+  1: ["开学", "2022-09-02"],
   2: ["中秋", "2022-09-10"],
   3: ["国庆", "2022-10-01"],
   4: ["元旦", "2023-01-01"],
