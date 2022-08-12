@@ -12,6 +12,11 @@ skip-proxy = %APPEND% iosapps.itunes.apple.com
 (^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
 (?<=eme\/v)2(?=\/f\w{2}d\/\?.*) 1 302
 
+
+[Header Rewrite]
+# > 百度（全站替换为手机百度 Quark 的 User-Agent）
+http-request ^https?:\/\/(?!d\.pcs).*(?<!map)\.baidu\.com header-replace-regex User-Agent .+iPhone.+ "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)"
+
 [Rule]
 # 屏蔽网页非得让用户登陆的 sb 玩意儿
 # https://www.v2ex.com/t/730727
@@ -25,6 +30,9 @@ URL-REGEX, ^https://static\.zhihu\.com/[^/]+/(main|column)\.signflow\.[^.]+.js, 
 # > 彩云天气通知
 彩云天气 = type=cron,cronexp=0 7-22/3 * * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js,script-update-interval=0
 彩云天气 = type=http-request,pattern=https://((weather-data.apple)|(api.weather)).com,requires-body=0,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js,script-update-interval=0
+
+# > 京东去开屏广告 by blackmatrix7
+京东去开屏广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js
 
 # > 百度搜索防跳转
 百度防跳转 = type=http-response,pattern=^https:\/\/boxer\.baidu\.com\/scheme\?scheme,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
@@ -60,5 +68,11 @@ TK去水印 = type=http-response,pattern=https?:\/\/.*\.tiktokv\.com\/aweme\/v\d
 # > 京东App 历史价格 
 京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jd_price.js
 
+# > 微信去广告
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
+
+# > 微信公众号去广告 by Choler&yjqiang
+微信公众号去广告 = type=http-response,requires-body=1,max-size=-1,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad\?,script-path=https://raw.githubusercontent.com/yjqiang/surge_scripts/main/scripts/wechat/wechat_public_accounts.js
+
 [MITM]
-hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com,  testflight.apple.com, biz.caiyunapp.com, spclient.wg.spotify.com ,*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, security.wechat.com, weixin110.qq.com, api.m.jd.com, static.zhihu.com, boxer.baidu.com, weather-data.apple.com, api.weather.com
+hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com,  testflight.apple.com, biz.caiyunapp.com, spclient.wg.spotify.com ,*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, security.wechat.com, weixin110.qq.com, mp.weixin.qq.com, api.m.jd.com, static.zhihu.com, boxer.baidu.com, weather-data.apple.com, api.weather.com, *.baidu.com
