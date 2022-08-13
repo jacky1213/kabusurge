@@ -1,5 +1,5 @@
 #!name=Myappjs
-#!desc=收集的一些模块
+#!desc=收集的一些脚本
 #!system=ios
 [General]
 skip-proxy = %APPEND% iosapps.itunes.apple.com
@@ -19,29 +19,14 @@ http-request ^https?:\/\/(?!d\.pcs).*(?<!map)\.baidu\.com header-replace-regex U
 
 [Rule]
 # 屏蔽网页非得让用户登陆的 sb 玩意儿
-# https://www.v2ex.com/t/730727
-# eg: https://static.zhihu.com/heifetz/main.signflow.8981b23e28b3de684698.js
-
-# https://www.v2ex.com/t/784612
-# eg: https://static.zhihu.com/heifetz/column.signflow.288f3addd8e584a7bca6.js
 URL-REGEX, ^https://static\.zhihu\.com/[^/]+/(main|column)\.signflow\.[^.]+.js, REJECT
 
 [Script]
-# > 彩云天气通知
-彩云天气 = type=cron,cronexp=0 7-22/3 * * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js,script-update-interval=0
-彩云天气 = type=http-request,pattern=https://((weather-data.apple)|(api.weather)).com,requires-body=0,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js,script-update-interval=0
-
 # > 京东去开屏广告 by blackmatrix7
 京东去开屏广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js
 
 # > 百度搜索防跳转
 百度防跳转 = type=http-response,pattern=^https:\/\/boxer\.baidu\.com\/scheme\?scheme,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
-
-# > NASA推送的每日一图
-# NASA每日一图 = type=cron,cronexp=0 7 * * *,script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/nasa/nasapic.js
-
-# > iDaily每日推送
-# iDaily每日环球视野 = type=cron,cronexp=0 8 * * *,script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/idaily/idaily.js
 
 # > yichahucha的Netflix评分
 nf_rating.js = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
