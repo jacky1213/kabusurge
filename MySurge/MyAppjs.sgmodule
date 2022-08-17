@@ -59,5 +59,8 @@ http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,m
 # > 微信公众号去广告 by Choler&yjqiang
 微信公众号去广告 = type=http-response,requires-body=1,max-size=-1,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad\?,script-path=https://raw.githubusercontent.com/yjqiang/surge_scripts/main/scripts/wechat/wechat_public_accounts.js
 
+# > 酷我音乐解锁
+酷我音乐解锁 = type=http-response,pattern=^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kw.js
+
 [MITM]
-hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com,  testflight.apple.com, biz.caiyunapp.com, spclient.wg.spotify.com ,*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, security.wechat.com, weixin110.qq.com, mp.weixin.qq.com, api.m.jd.com, static.zhihu.com, boxer.baidu.com, weather-data.apple.com, api.weather.com, *.baidu.com
+hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com,  testflight.apple.com, biz.caiyunapp.com, spclient.wg.spotify.com ,*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, security.wechat.com, weixin110.qq.com, mp.weixin.qq.com, api.m.jd.com, static.zhihu.com, boxer.baidu.com, weather-data.apple.com, api.weather.com, *.baidu.com, *.kuwo.cn, *.lrts.me
