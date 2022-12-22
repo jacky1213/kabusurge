@@ -12,6 +12,8 @@ skip-proxy = %APPEND% iosapps.itunes.apple.com
 # ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
 # (^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
 # (?<=eme\/v)2(?=\/f\w{2}d\/\?.*) 1 302
+^https?://(www.)?g.cn https://www.google.com 302
+^https?://(www.)?google.cn https://www.google.com 302
 
 
 [Header Rewrite]
@@ -57,4 +59,4 @@ TestFlight账户管理 = type=http-request,pattern=^https:\/\/testflight\.apple\
 酷我音乐解锁 = type=http-response,pattern=^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kw.js
 
 [MITM]
-hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com,  testflight.apple.com, biz.caiyunapp.com, spclient.wg.spotify.com ,*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, security.wechat.com, weixin110.qq.com, mp.weixin.qq.com, api.m.jd.com, static.zhihu.com, boxer.baidu.com, weather-data.apple.com, api.weather.com, *.baidu.com, *.kuwo.cn, *.lrts.me
+hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com,  testflight.apple.com, biz.caiyunapp.com, spclient.wg.spotify.com ,*.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, security.wechat.com, weixin110.qq.com, mp.weixin.qq.com, api.m.jd.com, static.zhihu.com, boxer.baidu.com, weather-data.apple.com, api.weather.com, *.baidu.com, *.kuwo.cn, *.lrts.me, www.google.cn, www.g.cn
