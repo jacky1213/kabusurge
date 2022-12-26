@@ -2,8 +2,6 @@
 #!desc=解锁Premium
 
 [Script]
-# 滴答清单会员破解
-Dida = type=http-response,pattern=^https:\/\/dida365\.com\/api\/v2\/user\/status,requires-body=1,script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/ddqd.js,script-update-interval=0,max-size=0
 
 ## Anybox
 # AnyBox 解锁Pro永久版 = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\$RCAnonymousID%3A\w{32})$,requires-body=1,,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/AnyBoxProCrack.js,script-update-interval=0,max-size=0
