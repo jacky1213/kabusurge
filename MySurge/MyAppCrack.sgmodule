@@ -24,7 +24,8 @@ Spark解锁 = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(
 # FIMO破解
 FIMO破解=type=http-response,pattern=^https://server.yoyiapp.com/fimo-user/user$,requires-body=1,script-path=https://github.com/ddgksf2013/dev/raw/main/FimoProCrack.js,max-size=0,script-update-interval=0
 
-
+# 扫描全能王
+扫描全能王=type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?, requires-body=1,script-path=https://github.com/ddgksf2013/dev/raw/main/CamscannerProCrack.js, max-size=0,script-update-interval=0
 
 [MITM]
-hostname = %APPEND% buy.itunes.apple.com,api.revenuecat.com,diary-id.sumi.io,api.revenuecat.com, server.yoyiapp.com
+hostname = %APPEND% buy.itunes.apple.com,api.revenuecat.com,diary-id.sumi.io,api.revenuecat.com, server.yoyiapp.com, api4.bybutter.com
