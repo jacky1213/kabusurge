@@ -4,7 +4,7 @@
 [Script]
 
 ## Anybox
-AnyBox 解锁Pro永久版 = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\$RCAnonymousID%3A\w{32})$,requires-body=1,,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/AnyBoxProCrack.js,script-update-interval=0,max-size=0
+# AnyBox 解锁Pro永久版 = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\$RCAnonymousID%3A\w{32})$,requires-body=1,,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/AnyBoxProCrack.js,script-update-interval=0,max-size=0
 
 # Fitness
 Fitness = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/gjwj666/jichang/main/FitnessView.js,script-update-interval=0,max-size=0
@@ -13,10 +13,10 @@ Fitness = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyR
 Picsew长截图破解 = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/PicsewProCrack.js,max-size=0,script-update-interval=0
 
 # 格志日记
-格志破解 = type=http-response,pattern=^https?:\/\/diary-id\.sumi\.io\/api\/profile$,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/GridDiary2ProCrack.js,max-size=0,script-update-interval=0
+# 格志破解 = type=http-response,pattern=^https?:\/\/diary-id\.sumi\.io\/api\/profile$,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/GridDiary2ProCrack.js,max-size=0,script-update-interval=0
 
 # 年轮3
-年轮3破解 = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/Mematom3ProCrack.js,max-size=0,script-update-interval=0
+# 年轮3破解 = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/Mematom3ProCrack.js,max-size=0,script-update-interval=0
 
 # Spark
 Spark解锁 = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\w{14})$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/SparkMailProCrack.js,script-update-interval=0
@@ -25,13 +25,10 @@ Spark解锁 = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(
 FIMO破解=type=http-response,pattern=^https://server.yoyiapp.com/fimo-user/user$,requires-body=1,script-path=https://github.com/ddgksf2013/dev/raw/main/FimoProCrack.js,max-size=0,script-update-interval=0
 
 # 扫描全能王
-扫描全能王=type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?, requires-body=1,script-path=https://github.com/ddgksf2013/dev/raw/main/CamscannerProCrack.js, max-size=0,script-update-interval=0
-
-# 钱迹
-# 钱迹=type=http-response,pattern=^https?:\/\/qianji\.xxoojoke\.com\/vip\/configios,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/MoneyTraceVipCrack.js,max-size=0,script-update-interval=0
+# 扫描全能王=type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?, requires-body=1,script-path=https://github.com/ddgksf2013/dev/raw/main/CamscannerProCrack.js, max-size=0,script-update-interval=0
 
 # Nicegram会员
-Nicegram会员=type=http-request,pattern=^https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\w+$,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/Nicegram/Script/Nicegram.js,script-update-interval=0
+# Nicegram会员=type=http-request,pattern=^https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\w+$,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/Nicegram/Script/Nicegram.js,script-update-interval=0
 
 # 美图秀秀(need登录)
 美图秀秀会员=type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/JavaScript/MeiTuXiuXiu.js,script-update-interval=0
