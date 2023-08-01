@@ -3,38 +3,20 @@
 
 [Script]
 
-# Fitness
-Fitness = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/gjwj666/jichang/main/FitnessView.js,script-update-interval=0,max-size=0
-
 # Picsew
 Picsew长截图破解 = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/PicsewProCrack.js,max-size=0,script-update-interval=0
-
-# 格志日记
-# 格志破解 = type=http-response,pattern=^https?:\/\/diary-id\.sumi\.io\/api\/profile$,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/GridDiary2ProCrack.js,max-size=0,script-update-interval=0
-
-# 年轮3
-# 年轮3破解 = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/Mematom3ProCrack.js,max-size=0,script-update-interval=0
 
 # Spark
 Spark解锁 = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\w{14})$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/SparkMailProCrack.js,script-update-interval=0
 
-# FIMO
-FIMO破解=type=http-response,pattern=^https://server.yoyiapp.com/fimo-user/user$,requires-body=1,script-path=https://github.com/ddgksf2013/dev/raw/main/FimoProCrack.js,max-size=0,script-update-interval=0
-
 # Nicegram会员
 Nicegram会员=type=http-request,pattern=^https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\w+$,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/Nicegram/Script/Nicegram.js,script-update-interval=0
 
-# 美图秀秀(need登录)
-美图秀秀会员=type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/JavaScript/MeiTuXiuXiu.js,script-update-interval=0
-
 # > 酷我音乐解锁
 酷我音乐解锁 = type=http-response,pattern=^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kw.js
-
-# > Spotify解锁
-# Spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js,script-update-interval=0
 
 # > 彩云天气 SVIP (biz.caiyunapp.com)
 彩云天气 SVIP = type=http-response, pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user), requires-body=1, max-size=-1, script-path=https://raw.githubusercontent.com/chiupam/surge/main/scripts/unblock/ColorfulClouds_SVIP.js
 
 [MITM]
-hostname = %APPEND% buy.itunes.apple.com,api.revenuecat.com,diary-id.sumi.io, server.yoyiapp.com, api4.bybutter.com, restore-access.indream.app, *.kuwo.cn, *.lrts.me, biz.caiyunapp.com, spclient.wg.spotify.com
+hostname = %APPEND% buy.itunes.apple.com,api.revenuecat.com,restore-access.indream.app, *.kuwo.cn, *.lrts.me, biz.caiyunapp.com
