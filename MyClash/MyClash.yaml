@@ -23,6 +23,7 @@ proxy-providers:
 # 节点信息
 proxies:
   - {name: 直连, type: direct}
+  - {name: 拒绝, type: reject}
 
 # 全局配置 
 mixed-port: 7890
@@ -142,7 +143,7 @@ proxy-groups:
   - {name: 🔯 日本故转, type: fallback, include-all: true, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"}
   - {name: 🔯 狮城故转, type: fallback, include-all: true, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(台|日|韩|深|美)).)*$"}
   - {name: 🔯 美国故转, type: fallback, include-all: true, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|韩|新|日)).)*$"}
-  - {name: 💣 广告杀手, type: select, proxies: [直连, reject]}
+  - {name: 💣 广告杀手, type: select, proxies: [拒绝, 直连]}
   - {name: 🌐 全部节点, type: select, include-all: true}
 
 # 规则匹配
